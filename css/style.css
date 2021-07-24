@@ -1805,8 +1805,8 @@ blockquote {
 	.section {
 		padding-top: 50px;
 		padding-bottom: 50px;
-		padding-left: 30px;
-		padding-right: 30px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.section .titles {
 		margin-bottom: 40px;
@@ -2056,8 +2056,8 @@ blockquote {
 .expert-list ul li {
     display: grid;
     grid-template-columns: 120px 1fr;
-    grid-template-rows: 70px;
     gap: 20px;
+	padding-bottom: 10px;
 }
 .expert-list ul li strong{
     color: #68e0cf;
@@ -2066,6 +2066,7 @@ blockquote {
 @media (max-width: 720px) {
 	.info-list ul li {
 		width: 100%;
+		font-size: 13px;
 	}
 	.info-list ul li strong {
 		margin-right: 15px;
@@ -3627,6 +3628,7 @@ blockquote {
 		margin-top: 40px;
 		float: none;
 		width: 100%;
+		padding: 20px;
 	}
 }
 
