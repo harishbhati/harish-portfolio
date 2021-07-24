@@ -1496,6 +1496,12 @@ blockquote {
 		-webkit-border-radius: 0;
 		-khtml-border-radius: 0;
 	}
+	.header .logo a{
+		color: #68e0cf;
+	}
+	.header .logo .logo-lnk{
+		max-width: 128px;
+	}
 	.header.fixed {
 		top: 0;
 		background: #585d65;
@@ -1859,7 +1865,7 @@ blockquote {
 .section.started .h-title {
 	margin: 40px 0 0 -11vw;
 	padding: 4.2vw;
-	font-size: 4.2vw;
+	font-size: 3vw;
 	line-height: 1.4;
 	font-weight: 800;
 	color: #FFF;
@@ -5831,5 +5837,13 @@ section.elementor-element:last-child .section {
 @media (max-width: 580px) {
 	.elementor-column.elementor-col-25, .elementor-column[data-col="25"] {
 		width: 50%!important;
+	}
+	.footer .socials a{
+		width: 40px;
+		height: 40px;
+    	line-height: 40px;
+	}
+	.section.started .h-title{
+		font-size: 25px;
 	}
 }
