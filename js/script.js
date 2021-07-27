@@ -173,38 +173,38 @@
 	/*
 		One Page Menu
 	*/
-	// $('header .top-menu').on('click', 'a', function(){
-	// 	var link = $(this).attr('href');
-	// 	if(link.indexOf('#section-') == 0){
-	// 		if(!$('body').hasClass('page-template-template-layout-builder')){
-	// 			location.href = '/'+link;
-	// 		}
+	$('header .top-menu').on('click', 'a', function(){
+		var link = $(this).attr('href');
+		if(link.indexOf('#section-') == 0){
+			if(!$('body').hasClass('page-template-template-layout-builder')){
+				location.href = '/'+link;
+			}
 
-	// 		$('body, html').animate({scrollTop: $(link).offset().top - 115}, 400);
-	// 		if($('header').hasClass('active')){
-	// 			$('.menu-btn').trigger('click');
-	// 		}
-	// 	}
-	// 	else {
-	// 		var preload = $('.preloader');
-	// 		preload.find('.box-1').velocity({
-	// 			translateY: '0%'
-	// 		}, {
-	// 			duration: 400,
-	// 			easing: [0.7,0,0.3,1]
-	// 		});
-	// 		preload.find('.box-2').velocity({
-	// 			translateY: '0%'
-	// 		}, {
-	// 			duration: 1000,
-	// 			easing: [0.7,0,0.3,1],
-	// 			complete: function(){
-	// 				location.href = link;
-	// 			}
-	// 		});
-	// 	}
-	// 	return false;
-	// });
+			$('body, html').animate({scrollTop: $(link).offset().top - 115}, 400);
+			if($('header').hasClass('active')){
+				$('.menu-btn').trigger('click');
+			}
+		}
+		else {
+			var preload = $('.preloader');
+			preload.find('.box-1').velocity({
+				translateY: '0%'
+			}, {
+				duration: 400,
+				easing: [0.7,0,0.3,1]
+			});
+			preload.find('.box-2').velocity({
+				translateY: '0%'
+			}, {
+				duration: 1000,
+				easing: [0.7,0,0.3,1],
+				complete: function(){
+					location.href = link;
+				}
+			});
+		}
+		return false;
+	});
 	if($('.section').length && $('.top-menu li a').length) {
 		$(window).on('scroll', function(){
 			var scrollPos = $(window).scrollTop();
@@ -301,89 +301,81 @@
 		});
 	}
 
-	/*
-		Filter items on button click
-	*/
-	$('.filters').on( 'click', '.btn-group', function() {
-		var filterValue = $(this).find('input').val();
-		$container.isotope({ filter: filterValue });
-		$('.filters .btn-group label').removeClass('glitch-effect');
-		$(this).find('label').addClass('glitch-effect');
-	});
+
 	
 	/*
 		Gallery popup
 	*/
-	if(/\.(?:jpg|jpeg|gif|png)$/i.test($('.wp-block-gallery .blocks-gallery-item:first a').attr('href'))){
-		$('.wp-block-gallery a').magnificPopup({
-			gallery: {
-				enabled: true
-			},
-			type: 'image',
-			closeBtnInside: false,
-			mainClass: 'mfp-fade'
-		});
-	}
+	// if(/\.(?:jpg|jpeg|gif|png)$/i.test($('.wp-block-gallery .blocks-gallery-item:first a').attr('href'))){
+	// 	$('.wp-block-gallery a').magnificPopup({
+	// 		gallery: {
+	// 			enabled: true
+	// 		},
+	// 		type: 'image',
+	// 		closeBtnInside: false,
+	// 		mainClass: 'mfp-fade'
+	// 	});
+	// }
 
 	/*
 		Media popup
 	*/
-	$('.has-popup-media').magnificPopup({
-		type: 'inline',
-		overflowY: 'auto',
-		closeBtnInside: true,
-		mainClass: 'mfp-fade'
-	});
+	// $('.has-popup-media').magnificPopup({
+	// 	type: 'inline',
+	// 	overflowY: 'auto',
+	// 	closeBtnInside: true,
+	// 	mainClass: 'mfp-fade'
+	// });
 
 	/*
 		Image popup
 	*/
-	$('.has-popup-image').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		mainClass: 'mfp-fade',
-		image: {
-			verticalFit: true
-		}
-	});
+	// $('.has-popup-image').magnificPopup({
+	// 	type: 'image',
+	// 	closeOnContentClick: true,
+	// 	mainClass: 'mfp-fade',
+	// 	image: {
+	// 		verticalFit: true
+	// 	}
+	// });
 	
 	/*
 		Video popup
 	*/
-	$('.has-popup-video').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		iframe: {
-            patterns: {
-                youtube_short: {
-                  index: 'youtu.be/',
-                  id: 'youtu.be/',
-                  src: 'https://www.youtube.com/embed/%id%?autoplay=1'
-                }
-            }
-        },
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false,
-		mainClass: 'mfp-fade',
-		callbacks: {
-			markupParse: function(template, values, item) {
-				template.find('iframe').attr('allow', 'autoplay');
-			}
-		}
-	});
+	// $('.has-popup-video').magnificPopup({
+	// 	disableOn: 700,
+	// 	type: 'iframe',
+	// 	iframe: {
+    //         patterns: {
+    //             youtube_short: {
+    //               index: 'youtu.be/',
+    //               id: 'youtu.be/',
+    //               src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+    //             }
+    //         }
+    //     },
+	// 	removalDelay: 160,
+	// 	preloader: false,
+	// 	fixedContentPos: false,
+	// 	mainClass: 'mfp-fade',
+	// 	callbacks: {
+	// 		markupParse: function(template, values, item) {
+	// 			template.find('iframe').attr('allow', 'autoplay');
+	// 		}
+	// 	}
+	// });
 	
 	/*
 		Music popup
 	*/
-	$('.has-popup-music').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false,
-		mainClass: 'mfp-fade'
-	});
+	// $('.has-popup-music').magnificPopup({
+	// 	disableOn: 700,
+	// 	type: 'iframe',
+	// 	removalDelay: 160,
+	// 	preloader: false,
+	// 	fixedContentPos: false,
+	// 	mainClass: 'mfp-fade'
+	// });
 
 	/*
 		Gallery popup
